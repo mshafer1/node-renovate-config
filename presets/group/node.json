@@ -4,7 +4,8 @@
     "packageRules": [
         {
             "matchCategories": [
-                "node"
+                "node",
+                "npm"
             ],
             "matchUpdateTypes": [
                 "major",
