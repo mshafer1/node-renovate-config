@@ -1,10 +1,10 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "description": "Group Python packages together.",
+    "description": "Group NPM packages together.",
     "packageRules": [
         {
             "matchCategories": [
-                "python"
+                "node"
             ],
             "matchUpdateTypes": [
                 "major",
@@ -13,8 +13,8 @@
                 "rollback",
                 "replacement"
             ],
-            "groupName": "Python packages",
-            "groupSlug": "python"
+            "groupName": "Node Packages",
+            "groupSlug": "node"
         }
     ]
 }

@@ -1,8 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "local>ni/python-renovate-config:default",
-        "local>ni/python-renovate-config//presets/enableVulnerabilityAlerts",
         "helpers:pinGitHubActionDigestsToSemver",
         // Run lock file maintenance monthly in order to upgrade indirect
         // dependencies that are not covered by the weekly update, such as
@@ -18,32 +16,11 @@
     "minimumReleaseAge": "14 days",
     "packageRules": [
         {
-            "description": "Update GitHub Actions on Sundays.",
+            "description": "Update Node packages on Sundays.",
             "extends": [
-                "local>ni/python-renovate-config//presets/group/githubActions"
+                "local>mshafer1/node-renovate-config//presets/group/node"
             ],
             "schedule": ["* * * * 0"]
-        },
-        {
-            "description": "Update Python packages on Sundays.",
-            "extends": [
-                "local>ni/python-renovate-config//presets/group/python"
-            ],
-            "schedule": ["* * * * 0"]
-        },
-        {
-            "description": "Set minimumReleaseAge to 1 day for ni/python-actions.",
-            "matchPackageNames": [
-                "ni/python-actions"
-            ],
-            "minimumReleaseAge": "1 day"
-        },
-        {
-            "description": "Set minimumReleaseAge to 1 day for NI Python packages.",
-            "extends": [
-                "local>ni/python-renovate-config//presets/packages/niPython"
-            ],
-            "minimumReleaseAge": "1 day"
         }
     ]
 }
